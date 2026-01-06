@@ -73,7 +73,7 @@ const BespokePage = () => {
   const [showConsultationModal, setShowConsultationModal] = useState(false);
   const [consultationData, setConsultationData] = useState({
     timeline: '3-6 months',
-    budget: '$500,000+',
+    budget: 'R500,000+',
     usage: 'primary-residence'
   });
 
@@ -92,7 +92,7 @@ const BespokePage = () => {
       name: 'Italian Full-Grain Leather',
       type: 'Leather',
       description: 'Hand-selected hides from Tuscany, vegetable-tanned',
-      price: '+$85,000',
+      price: '+R85,000',
       colors: ['#8B4513', '#A0522D', '#654321'],
       texture: '/textures/leather.jpg',
       properties: ['Ages beautifully', 'Natural markings', 'Breathable']
@@ -102,7 +102,7 @@ const BespokePage = () => {
       name: 'Mongolian Cashmere',
       type: 'Fabric',
       description: 'Grade A cashmere from Inner Mongolia',
-      price: '+$120,000',
+      price: '+R120,000',
       colors: ['#F5F5DC', '#FAEBD7', '#DEB887'],
       texture: '/textures/cashmere.jpg',
       properties: ['18-micron fibers', 'Silk-like feel', 'Temperature regulating']
@@ -112,7 +112,7 @@ const BespokePage = () => {
       name: 'Carrara Marble',
       type: 'Stone',
       description: 'Premium statuario marble from Italy',
-      price: '+$250,000',
+      price: '+R250,000',
       colors: ['#FFFFFF', '#F0F0F0', '#E0E0E0'],
       texture: '/textures/marble.jpg',
       properties: ['Unique veining', 'Cold to touch', 'Timeless elegance']
@@ -122,7 +122,7 @@ const BespokePage = () => {
       name: 'Honduras Mahogany',
       type: 'Wood',
       description: 'Century-old mahogany, air-dried for 5 years',
-      price: '+$95,000',
+      price: '+R95,000',
       colors: ['#8B4513', '#A0522D', '#654321'],
       texture: '/textures/mahogany.jpg',
       properties: ['Dense grain', 'Natural oils', 'Sustainably sourced']
@@ -132,7 +132,7 @@ const BespokePage = () => {
       name: 'Aerospace Titanium',
       type: 'Metal',
       description: 'Grade 5 titanium with PVD coating',
-      price: '+$180,000',
+      price: '+R180,000',
       colors: ['#C0C0C0', '#A9A9A9', '#808080'],
       texture: '/textures/titanium.jpg',
       properties: ['Corrosion resistant', 'Lightweight', 'Strength-to-weight ratio']
@@ -142,7 +142,7 @@ const BespokePage = () => {
       name: 'Swarovski Crystal',
       type: 'Crystal',
       description: 'Optically pure lead crystal',
-      price: '+$350,000',
+      price: '+R350,000',
       colors: ['#FFFFFF', '#F0F8FF', '#E6E6FA'],
       texture: '/textures/crystal.jpg',
       properties: ['99.9% clarity', 'Light refraction', 'Hand-cut facets']
@@ -247,7 +247,7 @@ const BespokePage = () => {
     // Size multiplier
     const sizeMultiplier = (customization.dimensions.width * customization.dimensions.depth) / 20000;
     basePrice *= (1 + sizeMultiplier);
-    return `$${Math.round(basePrice / 1000)}k - $${Math.round(basePrice / 1000) + 500}k`;
+    return `R${Math.round(basePrice / 1000)}k - R${Math.round(basePrice / 1000) + 500}k`;
   };
 
   return (

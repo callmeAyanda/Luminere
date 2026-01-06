@@ -34,6 +34,10 @@ const LuxuryLandingPage = () => {
       top: Math.random() * 100,
     }))
   );
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const collections = [
     {
@@ -41,7 +45,7 @@ const LuxuryLandingPage = () => {
       name: "Celestial Collection",
       category: "Limited Edition",
       description: "Handcrafted with meteorite inlays and 24k gold accents",
-      startingPrice: "$450,000",
+      startingPrice: "R420,000",
       image: "/api/placeholder/1200/800",
     },
     {
@@ -49,7 +53,7 @@ const LuxuryLandingPage = () => {
       name: "Sapphire Series",
       category: "Ocean Inspired",
       description: "Deep blue lacquer with mother-of-pearl detailing",
-      startingPrice: "$380,000",
+      startingPrice: "R360,000",
       image: "/api/placeholder/1200/800",
     },
     {
@@ -57,7 +61,7 @@ const LuxuryLandingPage = () => {
       name: "Onyx Noir",
       category: "Modern Minimalist",
       description: "Polished black marble with titanium framework",
-      startingPrice: "$520,000",
+      startingPrice: "R520,000",
       image: "/api/placeholder/1200/800",
     },
   ];
@@ -226,25 +230,34 @@ const LuxuryLandingPage = () => {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Animated Background Elements */}
         <div className="absolute inset-0">
-          {floatingElements.map((element) => (
-            <motion.div
-              key={element.id}
-              className="absolute w-px h-px bg-amber-500/20 rounded-full"
-              animate={{
-                y: [0, -100, 0],
-                x: [0, element.randomX, 0],
-              }}
-              transition={{
-                duration: element.randomDuration,
-                repeat: Infinity,
-                delay: element.id * 0.1,
-              }}
-              style={{
-                left: `${element.left}%`,
-                top: `${element.top}%`,
-              }}
-            />
-          ))}
+          {mounted &&
+            Array.from({ length: 20 }).map((_, i) => {
+              // Generate random positions ONLY when mounted (client-side)
+              const left = Math.random() * 100;
+              const top = Math.random() * 100;
+              const randomX = (Math.random() - 0.5) * 200;
+              const randomDuration = 2 + Math.random() * 3;
+
+              return (
+                <motion.div
+                  key={i}
+                  className="absolute w-px h-px bg-amber-500/20 rounded-full"
+                  animate={{
+                    y: [0, -100, 0],
+                    x: [0, randomX, 0],
+                  }}
+                  transition={{
+                    duration: randomDuration,
+                    repeat: Infinity,
+                    delay: i * 0.1,
+                  }}
+                  style={{
+                    left: `${left}%`,
+                    top: `${top}%`,
+                  }}
+                />
+              );
+            })}
         </div>
 
         <div className="container mx-auto px-6 py-32 relative z-10">
@@ -329,9 +342,9 @@ const LuxuryLandingPage = () => {
                       </p>
                     </div>
                     <div className="text-right">
-                      <div className="text-3xl font-light">$285,000</div>
+                      <div className="text-3xl font-light">R200,000</div>
                       <div className="text-sm text-zinc-500">
-                        FULL SET: $1.2M
+                        FULL SET: R1.2M
                       </div>
                     </div>
                   </div>

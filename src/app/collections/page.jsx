@@ -65,6 +65,10 @@ const CollectionsPage = () => {
       top: Math.random() * 100
     }));
   });
+  const [isMounted, setIsMounted] = useState(false);
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   const categories = [
     { id: 'living', name: 'Living Room', count: 24 },
@@ -93,7 +97,7 @@ const CollectionsPage = () => {
       id: 1,
       name: 'Celestial Collection',
       designer: 'Massimo Ferrari',
-      price: '$285,000 - $1.2M',
+      price: 'R285,000 - R1.2M',
       category: 'Limited Edition',
       description: 'Inspired by the cosmos, featuring meteorite inlays and constellations in 24k gold.',
       features: ['Meteorite Accents', 'Gold Leaf Detailing', 'Custom Constellations'],
@@ -110,7 +114,7 @@ const CollectionsPage = () => {
       id: 2,
       name: 'Sapphire Series',
       designer: 'Isabelle Laurent',
-      price: '$180,000 - $850,000',
+      price: 'R180,000 - R850,000',
       category: 'Ocean Inspired',
       description: 'Deep blue lacquer with mother-of-pearl detailing and wave-like silhouettes.',
       features: ['Mother-of-Pearl', 'Ocean Wave Design', 'Hand-Painted Lacquer'],
@@ -127,7 +131,7 @@ const CollectionsPage = () => {
       id: 3,
       name: 'Onyx Noir',
       designer: 'Hiroshi Tanaka',
-      price: '$320,000 - $2.5M',
+      price: 'R320,000 - R2.5M',
       category: 'Modern Minimalist',
       description: 'Polished black marble with titanium framework and hidden LED illumination.',
       features: ['LED Integration', 'Titanium Frame', 'Polished Marble'],
@@ -144,7 +148,7 @@ const CollectionsPage = () => {
       id: 4,
       name: 'Renaissance Revival',
       designer: 'Giovanni Moretti',
-      price: '$450,000 - $3.8M',
+      price: 'R450,000 - R3.8M',
       category: 'Classical',
       description: 'Hand-carved mahogany with silk upholstery and renaissance-inspired motifs.',
       features: ['Hand-Carved Details', 'Silk Upholstery', 'Gold Gilding'],
@@ -161,7 +165,7 @@ const CollectionsPage = () => {
       id: 5,
       name: 'Aurora',
       designer: 'Sofia Chen',
-      price: '$220,000 - $950,000',
+      price: 'R220,000 - R950,000',
       category: 'Contemporary',
       description: 'Dynamic lighting effects mimic the northern lights within crystal and glass.',
       features: ['Dynamic Lighting', 'Crystal Elements', 'Interactive Design'],
@@ -178,7 +182,7 @@ const CollectionsPage = () => {
       id: 6,
       name: 'Savannah',
       designer: 'Kwame Okafor',
-      price: '$190,000 - $1.1M',
+      price: 'R190,000 - R1.1M',
       category: 'Organic Modern',
       description: 'Natural materials including petrified wood, bronze, and hand-woven textiles.',
       features: ['Petrified Wood', 'Hand-Woven Textiles', 'Bronze Castings'],
@@ -227,7 +231,7 @@ const CollectionsPage = () => {
   const formatPrice = (price) => {
     return price.toLocaleString('en-US', {
       style: 'currency',
-      currency: 'USD',
+      currency: 'ZAR',
       minimumFractionDigits: 0,
       maximumFractionDigits: 0
     });
@@ -828,35 +832,39 @@ const CollectionsPage = () => {
                 <div className="grid md:grid-cols-2 gap-8">
                   {/* Image Gallery */}
                   <div>
-                    <Swiper
-                      spaceBetween={10}
-                      navigation={true}
-                      thumbs={{ swiper: thumbsSwiper }}
-                      modules={[Navigation, Thumbs]}
-                      className="rounded-2xl overflow-hidden mb-4"
-                    >
-                      {quickViewItem.images.map((img, i) => (
-                        <SwiperSlide key={i}>
-                          <div className="aspect-square bg-gradient-to-br from-amber-900/20 to-black/50 rounded-2xl" />
-                        </SwiperSlide>
-                      ))}
-                    </Swiper>
+                    {isMounted && (
+                      <Swiper
+                        spaceBetween={10}
+                        navigation={true}
+                        thumbs={{ swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null }}
+                        modules={[Navigation, Thumbs]}
+                        className="rounded-2xl overflow-hidden mb-4"
+                      >
+                        {quickViewItem.images.map((img, i) => (
+                          <SwiperSlide key={i}>
+                            <div className="aspect-square bg-gradient-to-br from-amber-900/20 to-black/50 rounded-2xl" />
+                          </SwiperSlide>
+                        ))}
+                      </Swiper>
+                    )}
 
-                    <Swiper
-                      onSwiper={setThumbsSwiper}
-                      spaceBetween={10}
-                      slidesPerView={4}
-                      freeMode={true}
-                      watchSlidesProgress={true}
-                      modules={[FreeMode, Navigation, Thumbs]}
-                      className="rounded-xl"
-                    >
-                      {quickViewItem.images.map((img, i) => (
-                        <SwiperSlide key={i}>
-                          <div className="aspect-square bg-gradient-to-br from-zinc-800 to-zinc-900 rounded-xl cursor-pointer" />
-                        </SwiperSlide>
-                      ))}
-                    </Swiper>
+                    {isMounted && (
+                      <Swiper
+                        onSwiper={setThumbsSwiper}
+                        spaceBetween={10}
+                        slidesPerView={4}
+                        freeMode={true}
+                        watchSlidesProgress={true}
+                        modules={[FreeMode, Navigation, Thumbs]}
+                        className="rounded-xl"
+                      >
+                        {quickViewItem.images.map((img, i) => (
+                          <SwiperSlide key={i}>
+                            <div className="aspect-square bg-gradient-to-br from-zinc-800 to-zinc-900 rounded-xl cursor-pointer" />
+                          </SwiperSlide>
+                        ))}
+                      </Swiper>
+                    )}
                   </div>
 
                   {/* Details */}

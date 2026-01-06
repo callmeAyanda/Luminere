@@ -109,7 +109,7 @@ const ClientsPage = () => {
     {
       level: 'platinum',
       name: 'Platinum Tier',
-      minSpend: '$5M+',
+      minSpend: 'R5M+',
       benefits: [
         'Dedicated Artisan Team',
         '24/7 Concierge',
@@ -125,7 +125,7 @@ const ClientsPage = () => {
     {
       level: 'gold',
       name: 'Gold Tier',
-      minSpend: '$1M - $5M',
+      minSpend: 'R1M - R5M',
       benefits: [
         'Personal Design Consultant',
         'Priority Scheduling',
@@ -140,7 +140,7 @@ const ClientsPage = () => {
     {
       level: 'silver',
       name: 'Silver Tier',
-      minSpend: '$250K - $1M',
+      minSpend: 'R250K - R1M',
       benefits: [
         'Design Consultation',
         'Standard Warranty',
@@ -154,10 +154,10 @@ const ClientsPage = () => {
   ];
 
   const clientData = {
-    name: 'Alexander Sterling',
+    name: 'Ayanda Makhubu',
     membership: 'Platinum Tier',
     memberSince: '2018',
-    totalSpent: '$8,450,000',
+    totalSpent: 'R8,450,000',
     activeProjects: 3,
     completedProjects: 12,
     pendingOrders: 2,
@@ -168,7 +168,7 @@ const ClientsPage = () => {
       {
         id: 1,
         type: 'project',
-        title: 'Manhattan Penthouse Project',
+        title: 'Melrose Estate Project',
         description: 'Final design approval completed',
         date: '2 hours ago',
         status: 'completed'
@@ -193,7 +193,7 @@ const ClientsPage = () => {
         id: 4,
         type: 'payment',
         title: 'Installment Payment',
-        description: 'Payment of $450,000 processed',
+        description: 'Payment of R450,000 processed',
         date: '1 week ago',
         status: 'completed'
       }
@@ -464,7 +464,7 @@ const ClientsPage = () => {
                   className="flex items-center space-x-3 group"
                 >
                   <div className="w-10 h-10 rounded-full bg-gradient-to-br from-amber-600 to-amber-800 flex items-center justify-center">
-                    <span className="text-lg font-light">AS</span>
+                    <span className="text-lg font-light">AM</span>
                   </div>
                   <div className="hidden md:block text-left">
                     <div className="text-sm font-light">{clientData.name}</div>
@@ -485,7 +485,7 @@ const ClientsPage = () => {
                       <div className="p-4 border-b border-zinc-800">
                         <div className="flex items-center space-x-3">
                           <div className="w-12 h-12 rounded-full bg-gradient-to-br from-amber-600 to-amber-800 flex items-center justify-center">
-                            <span className="text-xl font-light">AS</span>
+                            <span className="text-xl font-light">AM</span>
                           </div>
                           <div>
                             <div className="font-light">{clientData.name}</div>
@@ -816,7 +816,7 @@ const ClientsPage = () => {
                               <p className="text-sm text-zinc-400">Complete interior design project</p>
                             </div>
                             <div className="flex items-center justify-between">
-                              <div className="text-sm text-amber-400">$2.8M Budget</div>
+                              <div className="text-sm text-amber-400">R2.8M Budget</div>
                               <div className="text-sm text-zinc-400">65% Complete</div>
                             </div>
                           </div>

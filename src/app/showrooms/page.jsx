@@ -57,11 +57,11 @@ const ShowroomsPage = () => {
   const showrooms = [
     {
       id: 1,
-      name: 'Manhattan Penthouse',
-      location: '432 Park Avenue, NYC',
+      name: 'Melrose Estate',
+      location: '432 Park Avenue, JHB',
       hours: 'By Appointment Only',
-      phone: '+1 (212) 888-9999',
-      email: 'manhattan@lumiere.com',
+      phone: '+27 71 234 5678',
+      email: 'melrose@lumiere.com',
       features: [
         '360° Central Park Views',
         'Private Elevator Access',
@@ -74,11 +74,11 @@ const ShowroomsPage = () => {
     },
     {
       id: 2,
-      name: 'Beverly Hills Estate',
-      location: 'Rodeo Drive, Los Angeles',
+      name: 'Hyde Park Avenue',
+      location: 'Rodeo Drive, Hyde Park',
       hours: 'Mon-Sat: 10AM-8PM',
-      phone: '+1 (310) 555-7777',
-      email: 'beverlyhills@lumiere.com',
+      phone: '+27 71 987 6543',
+      email: 'hydepark@lumiere.com',
       features: [
         'Outdoor Pavilion',
         'Wine Cellar Tasting Room',
@@ -91,28 +91,28 @@ const ShowroomsPage = () => {
     },
     {
       id: 3,
-      name: 'Knightsbridge Townhouse',
-      location: 'Harrods, London',
+      name: 'Sandton City',
+      location: 'Sandton, JHB',
       hours: 'By Appointment Only',
       phone: '+44 (20) 7123-4567',
-      email: 'london@lumiere.com',
+      email: 'sandton@lumiere.com',
       features: [
         'Historical Architecture',
         'Royal Appointment Holder',
         'After-Hours Access',
         'Private Dining Room'
       ],
-      description: 'Grade II listed Georgian townhouse with original period features and modern luxury integration.',
+      description: 'Grade II listed Georgian surburb with original period features and modern luxury integration.',
       image: '/api/placeholder/1200/800',
       featuredItems: [7, 8, 9]
     },
     {
       id: 4,
-      name: 'Dubai Sky Palace',
-      location: 'Burj Khalifa, Dubai',
+      name: 'Houghton Estate',
+      location: 'Houghton, JHB',
       hours: '24/7 VIP Access',
       phone: '+971 (4) 888-2222',
-      email: 'dubai@lumiere.com',
+      email: 'houghton@lumiere.com',
       features: [
         'World\'s Highest Showroom',
         'Helipad Access',
